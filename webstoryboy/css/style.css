@@ -51,7 +51,7 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 /*float:left로 인한 영역깨짐(height:0) 방지법
 1. 깨지는 영역에 똑같이 float:left를 사용한다.(X)-->한번 써버리면 밑의 모든 박스에 float:left를 사용하게 됩니다.
 2.float의 성질을 차단하는 clear:both;를 사용한다.(X)-->어떤 영역이 깨졌는지 찾기 어려움.
-3.float를 사용한 상위 박스한테 overflow:hidden을 사용합니다.(O)-->현재는 제일 많이 사용
+3.float를 사용한 상위 박스한테 overflow:hidden을 사용합니다.(O)-->현재는 제일 많이 사용(overflow:hidden을 상위박스에 쓰면 영역을 잡아버리는 효과가 나기때문)
 4.clearfix를 사용합니다.(O)-->현재는 가장좋은 방법이지만 반응형에서 사용예정
 */
 
@@ -105,13 +105,14 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 
 .cont .column .ico_img{display: block; width: 60px; height: 60px; background:url(../img/icon.png) no-repeat; position: absolute; left: 0; top: 0;}
 .cont .column .ico_tit{padding-left: 70px; font-size: 16px; color:#2c94c4;}
-.cont .column .ico_desc{padding-left: 70px; border-bottom:1px solid #d0d0d0; padding-bottom: 15px;}
+.cont .column .ico_desc{padding-left: 70px; border-bottom:1px solid #d0d0d0; padding-bottom: 15px; margin-bottom: 15px;}
 
 .cont .col1 .ico_img{background-position: 0 -240px;}
 .cont .col2 .ico_img{background-position: 0 -300px;}
 .cont .col3 .ico_img{background-position: 0 -360px;}
 .cont .col4 .ico_img{background-position: 0 -420px;}
-.cont .col5 .ico_img{background-position: 0 -480px;}
+.cont .col5 .ico_img{
+	background-position: 0 -480px;}
 .cont .col6 .ico_img{background-position: 0 -540px;}
 .cont .col1 .ico_img:hover{background-position: -60px -240px;}
 .cont .col2 .ico_img:hover{background-position: -60px -300px;}
@@ -119,3 +120,10 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .cont .col4 .ico_img:hover{background-position: -60px -420px;}
 .cont .col5 .ico_img:hover{background-position: -60px -480px;}
 .cont .col6 .ico_img:hover{background-position: -60px -540px;}
+
+/* 게시판 */
+.notice {position:relative;}
+.notice h4{font-size: 14px; color:#0093bd; padding-bottom: 3px; font-weight:bold;}
+.notice ul li{overflow:hidden; text-overflow: ellipsis; white-space:nowrap; background:url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;} /*게시판 글의 li를 한줄로 표현하게 하기위해서 overflow:hidden사용 overflow:hidden은 float:left사용할때 쓰는거 이외에도 내가 지정한 영역을 벗어나는 것은 나오게 하지말게 쓰는거임/  text-overflow: ellipsis; 한줄 내가 지정한 영역을 벗어나면 ...으로 바꿔주는역할 두줄을 한줄로 바꾸려면 white-space:nowrap;을 사용해야됨*/
+.notice ul li a{font-size: 12px;}
+.notice a.more{position:absolute; right:0; top:0; display:block; background:url(../img/icon.png) -150px -90px; width: 17px; height: 17px;}
