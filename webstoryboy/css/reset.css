@@ -14,6 +14,9 @@ a:hover{color:#390;}
 body, input, textarea, select, button, table {
     font-family:'Nanum Gothic', 'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; color:#222; font-size:13px; line-height:1.5;}
 
+/* 폰트 스타일 초기화 */
+em{font-style: normal;}
+
 /*블릿기호 초기화*/
 dl, ul, li, ol, menu{list-style:none;}
 
@@ -33,3 +36,14 @@ z-index는 박스가 겹칠 때 누가 위에 나올지 우선순위 정하는�
 /*대체 텍스트가 아니고 접근성을 위한 숨김 텍스트를 제공할 때*/
 .ir_su{overflow:hidden; position:absolute; width: 0; height: 0; line-height:0; text-indent:-9999px;}
 /*text-indent는 들여쓰기라는 뜻*/
+
+/* margin, padding */
+.mt10{margin-top: 10px; !important;}
+.mt15{margin-top: 15px; !important;}
+.mt20{margin-top: 20px; !important;}
+.mt25{margin-top: 25px; !important;}
+.mt30{margin-top: 30px; !important;}
+.mt35{margin-top: 35px; !important;}
+.mt40{margin-top: 40px; !important;}
+.mt45{margin-top: 45px; !important;}
+.mt50{margin-top: 50px; !important;}

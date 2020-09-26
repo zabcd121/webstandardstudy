@@ -127,3 +127,44 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .notice ul li{overflow:hidden; text-overflow: ellipsis; white-space:nowrap; background:url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;} /*게시판 글의 li를 한줄로 표현하게 하기위해서 overflow:hidden사용 overflow:hidden은 float:left사용할때 쓰는거 이외에도 내가 지정한 영역을 벗어나는 것은 나오게 하지말게 쓰는거임/  text-overflow: ellipsis; 한줄 내가 지정한 영역을 벗어나면 ...으로 바꿔주는역할 두줄을 한줄로 바꾸려면 white-space:nowrap;을 사용해야됨*/
 .notice ul li a{font-size: 12px;}
 .notice a.more{position:absolute; right:0; top:0; display:block; background:url(../img/icon.png) -150px -90px; width: 17px; height: 17px;}
+
+/* 게시판2 */
+.notice2{position:relative; margin-top: 15px;}
+.notice2 h4{font-size: 14px; color:#0093bd; padding-bottom: 3px; font-weight:bold;}
+.notice2 ul{}
+.notice2 li{overflow:hidden; background:url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
+.notice2 li a{float:left; width: 65%; overflow: hidden; text-overflow:ellipsis; white-space:nowrap;}
+.notice2 li span{float: right; width: 30%; text-align:right;}
+.notice2 a.more{position:absolute; right:0; top:0; display:block; background:url(../img/icon.png) -150px -90px; width: 17px; height: 17px;}
+
+/* 게시판3 */
+.notice3{position:relative; margin-top: 15px;}
+.notice3 h4{font-size: 14px; color:#0093bd; padding-bottom: 3px; font-weight:bold;}
+.notice3 li{position: relative; padding: 8px 0 14px 60px; }
+.notice3 li a img{width: 50px; position:absolute; left: 0; top: 0; border:1px solid #0093bd;}/*float로 코딩하면 코드가 지저분해지므로 position:absolute를 줘서 옆에 글자들을 padding값으로 조정함*/
+.notice3 li a strong{display: block;}
+.notice3 li a span{display: block; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; font-size: 12px;}
+.notice3 a.more{position:absolute; right:0; top:0; display:block; background:url(../img/icon.png) -150px -90px; width: 17px; height: 17px;}
+
+/* 마우스 오버효과 */
+.notice_hover h4{font-size: 14px; color:#0093bd; padding-bottom: 3px; font-weight:bold;}
+.notice_hover ul{overflow: hidden;}
+.notice_hover li{float:left; width: 93px; margin-right: 5px; text-align: center;}
+.notice_hover li:last-child{margin-right:0;} /*ie9부터 적용/ li에서 margin-right를 적용하면 모든 li에 적용되므로 원래 width를 초과하게되어서 마지막에만 적용안되게함*/
+.notice_hover li.last{margin-right: 0;} /*모든 브라우저 버전 사용가능*/
+.notice_hover li a span{position: relative; display: block; width: 93px; height: 93px; line-height:93px;}/*li에서 text-align:center한 뒤에 완전중앙에 위치하게 하려면 line-height를 써야됨*/
+.notice_hover li a span img{width: 100%;}/*부모요소의 li의 width와 같다.*/
+.notice_hover li a span em{visibility: hidden; position: absolute; left: 0;	top: 0; background: rgba(0,0,0,0.7); color:#fff; width: 100%; height: 100%;} /* em태그는 기본성질이 글씨가 기울어지기 때문에 reset해줘야됨 visibility: hidden은 글자를 안보이게 만들어줌 */
+.notice_hover li a span:hover em{visibility: visible;}/*visibility: hidden로 숨겨둔것을 visible로 마우스hover시 보이게 함*/
+.notice_hover li a strong{display:inline-block; padding-top: 3px; font-size: 12px;}
+
+/* 마우스 오버효과2 */
+.notice_hover2 h4{font-size:14px; color:#0093bd; padding-bottom: 3px; font-weight: bold;}
+.notice_hover2 ul{overflow:hidden;}
+.notice_hover2 li{float:left; width:93px; margin-right: 5px; text-align: center;}
+.notice_hover2 li:last-child{margin-right: 0;}
+.notice_hover2 li a span{position:relative; display: block; width: 93px; height: 93px;} /*여기서 width값과 height값 주는게 em요소를 블럭화하고 이미지영역만큼 크기를잡으려고*/
+.notice_hover2 li a span img{width: 100%;}
+.notice_hover2 li a span em{visibility:hidden; position:absolute; left: 0; bottom: 0; width: 100%; background:rgba(0,0,0,0.7); color:#fff;}
+.notice_hover2 li a span:hover em{visibility:visible;}
+.notice_hover2 li a strong{display: inline-block; padding-top: 3px; font-size: 12px;}
