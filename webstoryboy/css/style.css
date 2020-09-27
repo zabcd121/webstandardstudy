@@ -27,7 +27,11 @@
 /*헤더*/
 .header .header-menu{text-align:right;}
 /*header-menu는 자식요소이므로 앞에 한칸띄우고 써야됨
-a태그는 인라인요소임 그리고 텍스트자체가 전체영역이라서 a태그에 text-align:right로는 움직이지 않음
+a태그는 인라인요소임 그리고 텍스트자체가 전체영역이
+
+
+
+라서 a태그에 text-align:right로는 움직이지 않음
 inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유지하면서 블록으로 바꿔주는 display:inline-block으로 해줘야 함*/
 .header .header-menu a{color:#fff; padding:10px 0px 10px 13px; display:inline-block;}
 .header .header-menu a:hover{color:#666;}
@@ -168,3 +172,32 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .notice_hover2 li a span em{visibility:hidden; position:absolute; left: 0; bottom: 0; width: 100%; background:rgba(0,0,0,0.7); color:#fff;}
 .notice_hover2 li a span:hover em{visibility:visible;}
 .notice_hover2 li a strong{display: inline-block; padding-top: 3px; font-size: 12px;}
+/* 컨텐츠 요소를 보이지 않게 하는 방법
+1.display:none (영역까지 같이 사라지게함) <-->반대 display:block
+2.visibility:hidden; (영역은 그대로 있고 텍스트만 사라짐) <-->반대 visibility:visible;
+3.opacity:0; (영역은 그대로 있고 텍스트만 사라짐) <-->반대 opacity:1; opacity는 css의 불투명도를 나타냄 0이면 투명 1이면 불투명
+4.width:0; height:0; overflow:hidden;
+*/
+
+/* 탭 메뉴 */
+.tab_menu{position: relative; border:1px solid #ccc; padding:8px; height: 105px;}
+.tab_menu ul{overflow: hidden; border-bottom:1px solid #ccc;}
+.tab_menu ul li{float:left; border:1px solid #ccc; margin-right: -1px; margin-bottom:-1px;} /*margin-right: -1px; border줄이 겹칠때 두줄처럼 보이는것을 한줄로 보이게 할때만 사용*/
+.tab_menu ul li a{padding: 5px; 10px; display:block;}/*padding값을 위의 li한테 주면 텍스트를 벗어난 border안에서는 클릭이 안되므로 a태그에 주고 display:block을 해준다.*/
+.tab_menu ul li ul{position: absolute; left=0; top: 48px; width: 270px; border:0;}/*밑에 a태그에 width값을 지정안해주면 벗어나버리기때문에 지정*/
+.tab_menu ul li ul li{float: none; border:0; background:url(../img/dot.gif) no-repeat 9px 8px; padding-left: 18px;}/*위의 li에서 적용한 float:left가 적용되지 않기 위해 none으로 지정*/
+.tab_menu ul li ul li a{overflow: hidden; text-overflow:ellipsis; white-space:nowrap; width:100%; padding:0 0 3px 0;} /*2단구조의 문제점이 위의 ul li a태그 속성에서 값을 변경하면 ul li ul li a태그에서도 적용됨*/
+.tab_menu ul li.active{background:#2c94c4;}
+.tab_menu ul li.active a{color:#fff;}
+.tab_menu ul li.active ul li a {color:#333;}/*위의 .active a태그에 흰색칼라를 넣으면 밑에 ul li ul li a태그의 텍스트도 흰색이 되므로 따로 검은색으로 바꿔줌*/
+/*나중에 자바스크립트로 작동해볼 예정*/
+
+/* 게시판4 */
+.notice4{position: relative; border:1px solid #ccc;}
+.notice4 h4{border-bottom:1px solid #ccc; font-size: 14px; color:#0093bd; font-weight:700; padding:8px 10px;}
+.notice4 h4 em{color:#cf3292;}/*글자를 강조하고 싶다면 em태그를 사용하고 글씨의 중요성을 강조하고 싶다면  strong태글를 사용 글씨의 중요성과 강조를 고려하지 않는 단순참고용표시는 mark*/
+.notice4 ul{padding:10px;}
+.notice4 ul li{overflow:hidden; background:url(../img/dot.gif) no-repeat 9px 8px; padding-left: 18px; padding-bottom: 2px;}
+.notice4 ul li a{float:left; width:60%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.notice4 ul li span{float:right; width:30%; text-align: right;}
+.notice4 a.more{position:absolute; right:9px; top:9px; }
