@@ -23,6 +23,9 @@ dl, ul, li, ol, menu{list-style:none;}
 /*제목 태그 초기화*/
 h1, h2, h3, h4, h5, h6{font-size:13px; color:#222; font-weight:normal;}
 
+/* 테투리 초기화 */
+img, fieldset{border:0 none;}
+
 /* IR효과 */
 /* 의미있는 이미지의 대체 텍스트를 제공하는 경우/ 이미지가 로드안될때 대체텍스트가 안나옴*/
 .ir_pm{display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;}
@@ -38,12 +41,12 @@ z-index는 박스가 겹칠 때 누가 위에 나올지 우선순위 정하는�
 /*text-indent는 들여쓰기라는 뜻*/
 
 /* margin, padding */
-.mt10{margin-top: 10px; !important;}
-.mt15{margin-top: 15px; !important;}
-.mt20{margin-top: 20px; !important;}
-.mt25{margin-top: 25px; !important;}
-.mt30{margin-top: 30px; !important;}
-.mt35{margin-top: 35px; !important;}
-.mt40{margin-top: 40px; !important;}
-.mt45{margin-top: 45px; !important;}
-.mt50{margin-top: 50px; !important;}
+.mt10 {margin-top: 10px !important;}
+.mt15 {margin-top: 15px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt25 {margin-top: 25px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt35 {margin-top: 35px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt45 {margin-top: 45px !important;}
+.mt50 {margin-top: 50px !important;}
