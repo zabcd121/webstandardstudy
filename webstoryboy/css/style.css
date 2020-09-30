@@ -13,7 +13,7 @@
 #wrap{}
 #header{height:325px; background: url(../img/header_bg.jpg) center top repeat-x;}/*백그라운드는 원래 왼쪽정렬이라 확대하면 왼쪽을 기준으로 이동하는데 position으로 center top으로 해주면됨*/
 #contents{}
-#footer{height:200px; background:#333;}
+#footer{border-top:1px solid #eee;}
 
 /*컨텐츠 레이아웃*/
 #cont_nav{background-color:#f6fdff;}
@@ -220,7 +220,7 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .gallery .gallery_img img {width: 100%;}
 
 /* 로그인 */
-#login_form{background: #f2f4f5; padding:15px;}
+.login-wrap{margin-bottom:15px; background: #f2f4f5; padding:15px;}
 .login_header{overflow: hidden; font-size: 12px; height: 30px;}
 .login_header .lh_check{float: left; padding-right: 15px;}
 .login_header .lh_check .input_check{vertical-align:-2px;}
@@ -234,3 +234,19 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .login_footer{margin-top: 5px;}
 .login_footer li{display: inline;}/*display: inline; 텍스트는 간단하게 inline으로 하면 블록구조가 아니므로 일렬로 정렬됨*/
 .login_footer li a{font-size: 12px;}
+
+/* 팝업 */
+.popup h4{font-size: 14px; color:#0093bd; font-weight: 700; padding-bottom: 4px; }
+.popup ul{overflow: hidden;}
+.popup ul li{float:left; width:93px; margin-right: 5px;}
+.popup ul li.last{margin-right: 0;} /*last-child를 써도되지만 호환성을 위해 이것을 사용*/
+.popup ul li a{}
+.popup img{width: 100%;}
+
+/* 푸터 */
+.footer{padding:25px 0; text-align: center;}
+.footer ul{margin-bottom: 20px;}
+.footer ul li{position: relative; display: inline; padding:0 7px 0 10px;}/*display:inline과 float:left 방법 2가지가 있는데 여기서는 float:left를 쓰면 text-align:center가 적용이 되지 않으므로 display:inline을 사용*/
+.footer ul li:before{content:''; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px;} /*before를 이용하여 가상요소를 생성*/
+.footer ul li:first-child:before{width:0; height: 0;}
+.footer .w3c{margin-top: 15px;}
