@@ -16,13 +16,13 @@
 #footer{border-top:1px solid #eee;}
 
 /*컨텐츠 레이아웃*/
-#cont_nav{background-color:#f6fdff;}
+#cont_nav{background-color:#f6fdff; display:none;}
 #cont_tit{background-color:#EAF7FD;}
 #cont_ban{background-color:#dceff7;}
 #cont_cont{background-color:#f6fdff;}
 
 /*컨테이너*/
-.container{width:990px; margin:0 auto; height:inherit; background:rgba(255,255,255,0.3);}
+.container{width:990px; margin:0 auto; height:inherit;}
 
 /*헤더*/
 .header .header-menu{text-align:right;}
@@ -78,24 +78,40 @@ inline요소는 padding이 적용되지 않음 그래서 인라인성질을 유�
 .tit{position:relative;}
 .tit h2{font-size: 40px; text-align:center; padding: 5px 0; letter-spacing:2px; color:#2c94c4; font-family: 'Nanum Brush Script', cursive;}
 .tit .btn{position:absolute; top:5px; right:0; width: 60px; height: 60px; background:url(../img/icon.png) no-repeat 0 -600px;}
+.tit .btn.on{background-position: 0 -660px;}
 
 /* 배너 */
+/*
 .ban{position:relative; padding:24px 0 20px;}
 .ban a.prev{position:absolute; left:-80px; top:60px; width: 43px; height: 43px; background:url(../img/icon.png) no-repeat -150px 0;}
 .ban a.next{position:absolute; right:-80px; top:60px; width: 43px; height: 43px; background:url(../img/icon.png) no-repeat -150px -43px;}
-/*position:absolute이므로 container의 width에 제약받지않고 빠져나갈수있는거임*/
+position:absolute이므로 container의 width에 제약받지않고 빠져나갈수있는거임
 .ban a.prev:hover{background-position:-193px 0;}
 .ban a.next:hover{background-position:-193px -43px;}
 .ban ul{overflow: hidden;}
 .ban ul li{float: left; width: 330px;}
-.ban ul li:last-child{text-align:right;} /* ie9부터 적용*/
-.ban ul li:nth-child(2){text-align:center;} /* ie9부터 적용*/
+.ban ul li:last-child{text-align:right;}  ie9부터 적용
+.ban ul li:nth-child(2){text-align:center;} ie9부터 적용
 .ban ul li.ban_img1{text-align:left;}
 .ban ul li.ban_img2{text-align: center;}
 .ban ul li.ban_img3{text-align:right;}
-.ban ul li img{border: 4px solid #dcdcdc;}
-/*바텀쪽에 빈여백이 생기는것을 없애기위해 img에 display를 block으로 하면 text-align이 적용이 안된다. 그래서 inline-block으로 바꾸면 이번에는 여백이 생겨버린다. 그래서 그냥 블록구조안쓰고 패딩값을 바꾼다*/
-.ban ul li img:hover{border-color:#98bcdc;}
+.ban img{border: 4px solid #dcdcdc;}
+바텀쪽에 빈여백이 생기는것을 없애기위해 img에 display를 block으로 하면 text-align이 적용이 안된다. 그래서 inline-block으로 바꾸면 이번에는 여백이 생겨버린다. 그래서 그냥 블록구조안쓰고 패딩값을 바꾼다
+.ban img:hover{border-color:#98bcdc;}*/
+
+/* 슬릭 배너 */
+.ban {position: relative; padding: 24px 0 20px;}
+.ban .slick-prev {position: absolute; left: -80px; top: 80px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px 0; text-indent: -9999px;}
+.ban .slick-next {position: absolute; right: -80px; top: 80px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px -43px; text-indent: -9999px;}
+.ban .slick-prev:hover {background-position: -193px 0;}
+.ban .slick-next:hover{background-position: -193px -43px;}
+.ban img {border: 4px solid #dcdcdc;}
+.ban img:hover {border-color: #98bcdc;}
+.ban .slick-slide {margin: 10px;}
+.ban .slick-dots {position: absolute; bottom: 15px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots li {display: inline-block; width: 15px; height: 15px; margin: 5px;}
+.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; cursor: pointer; background: #5dbfeb; border-radius: 50%;}
+.ban .slick-dots li.slick-active button {background: #2b91c8;}
 
 /* 컨텐츠 */
 .cont{overflow:hidden; padding-top:30px;}/*margin-top으로 여백을 만들면 하얀색배경으로 만들어지므로 패딩으로해야지 같은색으로 만들어짐*/

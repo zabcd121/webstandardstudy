@@ -11,6 +11,7 @@
 	<!-- css style -->
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slick.css">
 	
 	<!-- 웹 폰트 -->
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -132,13 +133,24 @@
             <div id="cont_ban">
                 <div class="container">
                     <div class="ban">
-                        <a href="#" class="prev"><span class="ir_pm">이전 이미지</span></a>
+<!--                        
+						<a href="#" class="prev"><span class="ir_pm">이전 이미지</span></a>
                         <ul>
                             <li class="ban_img1"><a href="#"><img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"></a></li>
                             <li class="ban_img2"><a href="#"><img src="img/banner_link2.jpg" alt="CSS 버튼 만들기"></a></li>
                             <li class="ban_img3"><a href="#"><img src="img/banner_link3.jpg" alt="로그인 폼 만들기"></a></li>
                         </ul>
                         <a href="#" class="next"><span class="ir_pm">다음 이미지</span></a>
+-->
+						<div><a href="#"><img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="#"><img src="img/banner_link2.jpg" alt="CSS 버튼 만들기"></a></div>
+                        <div><a href="#"><img src="img/banner_link3.jpg" alt="로그인 폼 만들기"></a></div>
+                        <div><a href="#"><img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="#"><img src="img/banner_link2.jpg" alt="CSS 버튼 만들기"></a></div>
+                        <div><a href="#"><img src="img/banner_link3.jpg" alt="로그인 폼 만들기"></a></div>
+                        <div><a href="#"><img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="#"><img src="img/banner_link2.jpg" alt="CSS 버튼 만들기"></a></div>
+                        <div><a href="#"><img src="img/banner_link3.jpg" alt="로그인 폼 만들기"></a></div>
                     </div>
                 </div>
             </div>
@@ -440,5 +452,35 @@
 		<!-- //footer -->
 	</div>
 	<!-- //wrap -->
+	
+	<!-- script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script>
+		//배너
+		//html 마크업 셋팅 -> css 연동 -> jqeury 연동 -> jquery 호출(플러그인)
+        $(".ban").slick({
+            infinite: true,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			dots: true
+        });
+		
+		//버튼을 클릭하면 전체 메뉴를 보이게 하세요.
+		$(".tit .btn").click(function(e){
+			e.preventDefault(); //btn이 #으로 경로가 되어있으므로 버튼을 눌렀을 때 상단으로 이동해버림 그러므로 그것을 없애기 위한 코드임
+			//$("#cont_nav").css("display", "block");
+			//css로 쓸시 #cont_nav{display:block}
+			//$("#cont_nav").show();//display:none에서 block으로 바꿔주는 메서드
+			//$("#cont_nav").fadeIn();//천천히 나오게하는 효과
+			//$("#cont_nav").slideDown();//slide처럼 내려옴
+			//$("#cont_nav").toggle();//show와 hide 합쳐진 기능
+			//$("#cont_nav").fadeToggle(); //fadeIn과 toggle 합쳐진기능
+			$("#cont_nav").slideToggle(200); //slide와 toggle 합쳐진기능 숫자를 넣어서 빠르게 할 수 있음 200이면 0.2초
+			$(this).toggleClass("on"); //add와 delete역할을 다 해주는 toggleClass
+		}); //this는 자기자신이므로 ".tit .btn"를 가리킴
+	</script>
 </body>
 </html>
