@@ -219,21 +219,33 @@ position:absolute이므로 container의 width에 제약받지않고 빠져나갈
 .notice4 a.more{position:absolute; right:9px; top:9px; }
 
 /* 갤러리 */
-.gallery {position: relative; border: 1px solid #ccc; height: 254px; overflow: hidden;}
+.gallery {position: relative; border: 1px solid #ccc; overflow: hidden; height: 255px;}
 .gallery h4 {font-size: 14px; color: #0093bd; border-bottom: 1px solid #ccc; padding: 10px 0 8px 11px; font-weight: bold;}
 .gallery .gallery_btn {position: absolute; right: 5px; top: 7px;}
 .gallery .gallery_btn ul {overflow: hidden;}
 .gallery .gallery_btn li {float: left; margin: 1px 2px;}
 .gallery .gallery_btn li a {display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
-.gallery .gallery_btn li.gb_icon1 a {background-position: -150px -120px}
-.gallery .gallery_btn li.gb_icon2 a {background-position: -150px -143px}
-.gallery .gallery_btn li.gb_icon3 a {background-position: -150px -166px}
-.gallery .gallery_btn li.gb_icon4 a {background-position: -150px -189px}
-.gallery .gallery_btn li.gb_icon1 a:hover {background-position: -173px -120px}
-.gallery .gallery_btn li.gb_icon2 a:hover {background-position: -173px -143px}
-.gallery .gallery_btn li.gb_icon3 a:hover {background-position: -173px -166px}
-.gallery .gallery_btn li.gb_icon4 a:hover {background-position: -173px -189px}
+.gallery .gallery_btn li.gb_icon1 a {background-position: -150px -120px;}
+.gallery .gallery_btn li.gb_icon2 a {background-position: -150px -143px;}
+.gallery .gallery_btn li.gb_icon3 a {background-position: -150px -166px;}
+.gallery .gallery_btn li.gb_icon4 a {background-position: -150px -189px;}
+.gallery .gallery_btn li.gb_icon1 a:hover {background-position: -173px -120px;}
+.gallery .gallery_btn li.gb_icon2 a:hover {background-position: -173px -143px;}
+.gallery .gallery_btn li.gb_icon3 a:hover {background-position: -173px -166px;}
+.gallery .gallery_btn li.gb_icon4 a:hover {background-position: -173px -189px;}
 .gallery .gallery_img img {width: 100%;}
+
+
+/* 슬릭 갤러리 */
+.gallery .gallery_btn button{float: left; margin: 1px 2px; display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery .gallery_btn .gb_icon1 {background-position: -150px -120px;}
+.gallery .gallery_btn .gb_icon2 {background-position: -150px -143px;}
+.gallery .gallery_btn .gb_icon3 {background-position: -150px -166px;}
+.gallery .gallery_btn .gb_icon4 {background-position: -150px -189px;}
+.gallery .gallery_btn .gb_icon1:hover {background-position: -173px -120px;}
+.gallery .gallery_btn .gb_icon2:hover {background-position: -173px -143px;}
+.gallery .gallery_btn .gb_icon3:hover {background-position: -173px -166px;}
+.gallery .gallery_btn .gb_icon4:hover {background-position: -173px -189px;}
 
 /* 로그인 */
 .login-wrap{margin-bottom:15px; background: #f2f4f5; padding:15px;}
@@ -266,3 +278,9 @@ position:absolute이므로 container의 width에 제약받지않고 빠져나갈
 .footer ul li:before{content:''; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px;} /*before를 이용하여 가상요소를 생성*/
 .footer ul li:first-child:before{width:0; height: 0;}
 .footer .w3c{margin-top: 15px;}
+
+/* 레이어 팝업 */
+#layer{display: none; position: fixed; left: 50px; top: 50px; width: 700px; border:10px solid #dceff7; box-shadow: 3px 3px 10px rgba(0,0,0,0.4);}
+#layer img{width: 100%; display:block;} /*img는 인라인요소여서 폰트사이즈나 line-height 등이 숨어있어서 밑에 빈여백이 생겨버리는건데 display:block쓰면 없어짐*/
+#layer .close{position: absolute; right: 20px; top: 20px; background: #0093bd; padding: 1px 6px; color:#fff;}
+#layer .close:hover{text-decoration: underline;}
